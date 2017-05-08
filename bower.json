@@ -1,0 +1,20 @@
+{
+  "name": "recording-manager-front-a1",
+  "description": "Gerenciador de Gravações em Material Design",
+  "main": "index.js",
+  "authors": [
+    "Gustavo Pomponi"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-audio": "^1.7.3"
+  }
+}

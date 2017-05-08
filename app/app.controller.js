@@ -1,9 +1,11 @@
-  function AppController($mdSidenav, $resource, Recording, $mdDialog, $timeout){
+  function AppController($mdSidenav, $resource, Recording, $mdDialog, $timeout, ngAudio){
 
     this.toggleLeft = buildToggler('left');
     this.toggleRight = buildToggler('right');
     this.dtInicial = '';
     this.dtFinal = '';
+
+    this.aud = '';
 
     this.people = [{ 'name':'Gustavo', 'age':'36' },{ 'name':'Leonardo','age':'34' }];
     this.call = [
@@ -24,6 +26,14 @@
                 ];
 
     this.nome = 'Gustavo Pomponi';
+
+    this.audio = function(req){
+      // return ngAudio.load('./audio/out-0999553028-2010-20170502-090412-1493726652.1057.wav');
+      console.log(req);
+
+    }
+
+
 
     //$('#example').DataTable();
 
@@ -58,7 +68,7 @@
         this.recs = Recording.getRecsByDate(req);
     }
 
-      this.showAlert = function(ev) {
+    this.showAlert = function(ev) {
     // Appending dialog to document.body to cover sidenav in docs app
     // Modal dialogs should fully cover application
     // to prevent interaction outside of dialog
@@ -73,7 +83,6 @@
           .targetEvent(ev)
       );
   }
-
 
     this.dataSelecionada = function(req){
 

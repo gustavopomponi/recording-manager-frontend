@@ -1,0 +1,1 @@
+module.exports = require("npm:localtunnel@1.8.2/client.js");

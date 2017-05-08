@@ -57,4 +57,10 @@ function Recording($resource) {
         return $resource('http://localhost:3000/recordings/:dtInicial/:dtFinal/:sources/:destination/:disposition ', { dtInicial: this.dt_Inicial, dtFinal: this.dt_Final, sources: this.source, destination: this.target, disposition:''}).query();
      }
 
+     function getAudio(){
+
+       return $resource('http://localhost:3000/play');
+
+     }
+
 }

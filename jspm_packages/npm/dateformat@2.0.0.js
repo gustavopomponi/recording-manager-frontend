@@ -1,0 +1,1 @@
+module.exports = require("npm:dateformat@2.0.0/lib/dateformat");
