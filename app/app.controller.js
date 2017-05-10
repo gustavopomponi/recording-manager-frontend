@@ -4,42 +4,40 @@
     this.toggleRight = buildToggler('right');
     this.dtInicial = '';
     this.dtFinal = '';
+    this.path = '/home/asterisk/recordings/';
 
-    this.aud = '';
 
-    this.people = [{ 'name':'Gustavo', 'age':'36' },{ 'name':'Leonardo','age':'34' }];
-    this.call = [
-                  {
-                    'date':'10/04/2017',
-                    'source':'8010',
-                    'dst':'34988512935',
-                    'duration':'365s',
-                    'disposition':'ANSWERED'
-                  },
-                  {
-                    'date':'12/04/2017',
-                    'source':'8010',
-                    'dst':'34999166935',
-                    'duration':'40s',
-                    'disposition':'ANSWERED'
-                  }
-                ];
+    this.recpath = function(req){
 
-    this.nome = 'Gustavo Pomponi';
+      this.pth = '';
 
-    this.audio = function(req){
-      // return ngAudio.load('./audio/out-0999553028-2010-20170502-090412-1493726652.1057.wav');
-      console.log(req);
+      this.date = new Date(req.calldate).toISOString().slice(0,10);
+
+      this.year = this.date.substring(0,4);
+      this.month = this.date.substring(5,7);
+      this.day = this.date.substring(8,10);
+
+      if (req.recordingfile.length > 60){
+        this.pth = this.path + this.year + "/" + this.month + "/" + this.day + "/" +req.recordingfile.substring(39,req.length);
+      }  else {
+        this.pth = this.path + this.year + "/" + this.month + "/" + this.day + "/" +req.recordingfile;
+      }
+
+      //console.log(req.calldate);
+      console.log(this.pth);
+      //console.log(this.date);
+
+      return this.pth;
 
     }
 
+    this.audio = function(req){
 
+        this.recpath(req);
+        //ngAudio.load('./audio/out-0999553028-2010-20170502-090412-1493726652.1057.wav');
+        ngAudio.load(this.recpath(req));
 
-    //$('#example').DataTable();
-
-    //this.origens = Recording.getSources();
-    //this.destinos = Recording.getTargets();
-    //this.recs = Recording.getRecs();
+    }
 
     this.carrega = function(req) {
 
@@ -86,13 +84,20 @@
 
     this.dataSelecionada = function(req){
 
-        if(new Date(req.dtInicial) > new Date(req.dtFinal)){
-             this.errmsg = "Data final não pode ser maior que inicial !!";
-             this.showAlert();
-        }
-        else {
-          this.carrega(req);
-          this.carregaOrigem(req);
+      //console.log(req.dtInicial)
+      //console.log(req.dtFinal);
+
+        if(req.dtFinal)
+        {
+          //console.log('Ola Mundo');
+          if(new Date(req.dtInicial) > new Date(req.dtFinal)){
+               this.errmsg = "Data final não pode ser maior que inicial !!";
+               this.showAlert();
+          }
+          else {
+            this.carrega(req);
+            this.carregaOrigem(req);
+          }
         }
 
     };
