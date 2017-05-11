@@ -1,4 +1,4 @@
-  function AppController($mdSidenav, $resource, Recording, $mdDialog, $timeout, ngAudio, WebAudio){
+  function AppController($mdSidenav, $resource, Recording, $mdDialog, $timeout, WebAudio){
 
     this.toggleLeft = buildToggler('left');
     this.toggleRight = buildToggler('right');

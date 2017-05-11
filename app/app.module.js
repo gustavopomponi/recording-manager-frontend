@@ -6,14 +6,13 @@ import 'angular-aria';
 import 'angular-material';
 import 'angular-messages';
 import 'angular-resource';
-import 'angular-audio';
 import 'angular-webaudio';
 
 import AppController from './app.controller';
 import Recording from './app.service';
 //import Users from 'src/users/Users';
 
-export default angular.module( 'rm-app', [ 'ngMaterial','ngMessages','ngResource','ngAudio','ngWebAudio'] )
+export default angular.module( 'rm-app', [ 'ngMaterial','ngMessages','ngResource','ngWebAudio'] )
   .config(($mdIconProvider, $mdThemingProvider) => {
     // Register the user `avatar` icons
     $mdIconProvider
@@ -40,4 +39,4 @@ export default angular.module( 'rm-app', [ 'ngMaterial','ngMessages','ngResource
   .controller('AppController', AppController);
 
   Recording.$inject = ['$resource','$http'];
-  AppController.$inject = ['$mdSidenav','$resource','Recording','$mdDialog','$timeout','ngAudio','WebAudio'];
+  AppController.$inject = ['$mdSidenav','$resource','Recording','$mdDialog','$timeout','WebAudio'];
