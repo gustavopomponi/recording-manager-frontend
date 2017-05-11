@@ -21,6 +21,7 @@ System.config({
     "angular-messages": "github:angular/bower-angular-messages@1.6.4",
     "angular-resource": "github:angular/bower-angular-resource@1.6.4",
     "angular-audio":"./bower_components/angular-audio/app/angular.audio.js",
+    "angular-webaudio":"./bower_components/ngWebAudio/src/ngWebAudio.js",
     "babel": "npm:babel-core@5.8.38",
     "babel-runtime": "npm:babel-runtime@5.8.38",
     "bootstrap": "github:twbs/bootstrap@3.3.7",

@@ -1,10 +1,13 @@
-  function AppController($mdSidenav, $resource, Recording, $mdDialog, $timeout, ngAudio){
+  function AppController($mdSidenav, $resource, Recording, $mdDialog, $timeout, ngAudio, WebAudio){
 
     this.toggleLeft = buildToggler('left');
     this.toggleRight = buildToggler('right');
     this.dtInicial = '';
     this.dtFinal = '';
-    this.path = '/home/asterisk/recordings/';
+    //this.path = '/home/asterisk/recordings/';
+    this.path = 'http://192.168.1.217/recordings/';
+
+    var that = this;
 
     this.recpath = function(req){
 
@@ -30,11 +33,28 @@
 
     }
 
-    this.sound = function(req){
+    /*var audio = (function(req) {
 
-      this.audio = ngAudio.load(this.recpath(req));
+      var sound = ngAudio.load(that.recpath(req));
+    // calculate a
+      return sound;
+
+    })(that);*/
+
+    this.audio = function(req){
+
+        var sound = this.sound = new WebAudio(this.recpath(req), {buffer: false});
+
+        sound.play();
 
     }
+
+    //this.sound = function(req){
+
+      //return console.log(req);
+  //    var audio = ngAudio.load(this.recpath(req));
+  //    return audio;
+    //}
 
     this.carrega = function(req) {
 
