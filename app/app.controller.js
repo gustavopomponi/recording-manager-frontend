@@ -33,7 +33,7 @@
 
     //this.audio = function(req){
 
-    this.audio = ngAudio.load(this.recpath(req));
+    //this.audio = ngAudio.load(this.recpath(req));
 
     //}
 
