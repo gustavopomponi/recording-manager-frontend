@@ -31,13 +31,11 @@
 
     }
 
-    this.audio = function(req){
+    //this.audio = function(req){
 
-        this.recpath(req);
-        //ngAudio.load('./audio/out-0999553028-2010-20170502-090412-1493726652.1057.wav');
-        ngAudio.load(this.recpath(req));
+    this.audio = ngAudio.load(this.recpath(req));
 
-    }
+    //}
 
     this.carrega = function(req) {
 
