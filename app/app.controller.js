@@ -6,7 +6,6 @@
     this.dtFinal = '';
     this.path = '/home/asterisk/recordings/';
 
-
     this.recpath = function(req){
 
       this.pth = '';
@@ -31,11 +30,11 @@
 
     }
 
-    //this.audio = function(req){
+    this.sound = function(req){
 
-    //this.audio = ngAudio.load(this.recpath(req));
+      this.audio = ngAudio.load(this.recpath(req));
 
-    //}
+    }
 
     this.carrega = function(req) {
 
