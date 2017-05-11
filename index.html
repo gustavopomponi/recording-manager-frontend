@@ -100,7 +100,7 @@
                       <div class="col-lg-3"> {{ chamada.dst }} </div>
                       <div class="col-lg-1"> {{ chamada.duration }} </div>
                       <div class="col-lg-3"> {{ chamada.disposition }} </div>
-                      <div class="col-lg-1"> <md-icon md-svg-icon="file:download"  ng-click="Controlador.sound(chamada) ; Controlador.audio.paused ? Controlador.audio.play() : Controlador.audio.pause()"  aria-label="Send Email" class="md-secondary md-hue-3" ></md-icon></div>
+                      <div class="col-lg-1"> <md-icon md-svg-icon="file:download" ng-mouseouver="Controlador.sound(chamada)" ng-click="Controlador.audio.paused ? Controlador.audio.play() : Controlador.audio.pause()"  aria-label="Send Email" class="md-secondary md-hue-3" ></md-icon></div>
                       <div class="col-lg-1"> <md-icon class="md-secondary" ng-click="doSecondaryAction($event)" aria-label="Chat" md-svg-icon="file:cloudupload"></md-icon></div>
                   </div>
                 </div>
