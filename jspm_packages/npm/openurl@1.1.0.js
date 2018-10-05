@@ -1,1 +1,0 @@
-module.exports = require("npm:openurl@1.1.0/openurl.js");

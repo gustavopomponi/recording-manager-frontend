@@ -1,1 +1,0 @@
-module.exports = require("npm:eventemitter3@1.2.0/index.js");

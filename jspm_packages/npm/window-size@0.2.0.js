@@ -1,1 +1,0 @@
-module.exports = require("npm:window-size@0.2.0/index.js");

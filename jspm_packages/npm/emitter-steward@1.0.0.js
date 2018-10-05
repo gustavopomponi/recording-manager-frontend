@@ -1,1 +1,0 @@
-module.exports = require("npm:emitter-steward@1.0.0/index.js");
